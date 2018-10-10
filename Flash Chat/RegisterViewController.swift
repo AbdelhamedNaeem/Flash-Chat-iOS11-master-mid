@@ -18,7 +18,6 @@ class RegisterViewController: UIViewController {
     @IBOutlet var emailTextfield: UITextField!
     @IBOutlet var passwordTextfield: UITextField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -27,10 +26,7 @@ class RegisterViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-
-  
     @IBAction func registerPressed(_ sender: AnyObject) {
-        
         
         SVProgressHUD.show()
         
@@ -49,9 +45,6 @@ class RegisterViewController: UIViewController {
             SVProgressHUD.dismiss()
         }
 
-        
-        
     } 
-    
-    
+        
 }

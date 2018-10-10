@@ -13,21 +13,15 @@ import ChameleonFramework
 
 class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate{
     
-    
-    
     // Declare instance variables here
     var messageArray : [Message] = [Message]()
-    
-    
-
     
     // We've pre-linked the IBOutlets
     @IBOutlet var heightConstraint: NSLayoutConstraint!
     @IBOutlet var sendButton: UIButton!
     @IBOutlet var messageTextfield: UITextField!
     @IBOutlet var messageTableView: UITableView!
-    
-    
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,7 +61,6 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "customMessageCell", for: indexPath) as! CustomMessageCell
         
-        
         cell.messageBody.text = messageArray[indexPath.row].messageBody
         cell.senderUsername.text = messageArray[indexPath.row].sender
         cell.avatarImageView.image = UIImage(named : "egg")
@@ -91,10 +84,6 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
  
     
-    //TODO: Declare numberOfRowsInSection here:
-    
-    
-    
     //TODO: Declare tableViewTapped here:
     @objc func tableViewTapped(){
         messageTextfield.endEditing(true)
@@ -103,8 +92,6 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     //TODO: Declare configureTableView here:  custom configure
     
-   
-        
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
        
         
@@ -113,16 +100,6 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         return messageTableView.rowHeight
         }
-        
-    
-    
-    
-    
-    ///////////////////////////////////////////
-    
-    //MARK:- TextField Delegate Methods
-    
-    
 
     
     //TODO: Declare textFieldDidBeginEditing here:
@@ -141,17 +118,8 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             self.view.layoutIfNeeded()
         }
     }
-
-    
-    ///////////////////////////////////////////
-    
-    
+  
     //MARK: - Send & Recieve from Firebase
-    
-    
-    
-    
-    
     
     
     @IBAction func sendPressed(_ sender: AnyObject) {
@@ -207,8 +175,6 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
 
     
-    
-    
     @IBAction func logOutPressed(_ sender: AnyObject) {
         
         //TODO: Log out the user and send them back to WelcomeViewController
@@ -222,6 +188,4 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         }
     }
     
-
-
 }

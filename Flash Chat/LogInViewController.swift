@@ -23,8 +23,7 @@ class LogInViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-   
+    
     @IBAction func logInPressed(_ sender: AnyObject) {
 
         //TODO: Log in the user
@@ -47,10 +46,6 @@ class LogInViewController: UIViewController {
             
         }
         
-        
     }
-    
-
-
     
 }  
